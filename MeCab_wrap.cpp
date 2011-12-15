@@ -444,7 +444,7 @@ typedef struct swig_module_info {
   Return 0 when the two name types are equivalent, as in
   strncmp, but skipping ' '.
 */
-SWIGRUNTIME int
+SWIGRUNTIME long
 SWIG_TypeNameComp(const char *f1, const char *l1,
 		  const char *f2, const char *l2) {
   for (;(f1 != l1) && (f2 != l2); ++f1, ++f2) {
@@ -1832,7 +1832,7 @@ SWIG_AsCharPtrAndSize(VALUE obj, char** cptr, size_t* psize, int *alloc)
     
 
 
-    char *cstr = STR2CSTR(obj);
+    char *cstr = StringValuePtr(obj);
     
     size_t size = RSTRING_LEN(obj) + 1;
     if (cptr)  {
@@ -3611,7 +3611,7 @@ fail:
 
 SWIGINTERN VALUE _wrap_new_Tagger(int nargs, VALUE *args, VALUE self) {
   int argc;
-  VALUE argv[1];
+  VALUE argv[1] = {};
   int ii;
   
   argc = nargs;
