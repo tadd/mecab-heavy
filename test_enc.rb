@@ -10,3 +10,5 @@ while node
   node = node.next
 end
 
+result = tagger.parseNBest(1, '寿司とすき焼きを食べた。')
+puts "#{result} : #{result.encoding}"

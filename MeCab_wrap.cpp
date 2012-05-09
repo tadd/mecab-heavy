@@ -3169,6 +3169,11 @@ _wrap_Tagger_parseNBest(int argc, VALUE *argv, VALUE self) {
     }
   }
   vresult = SWIG_FromCharPtr((const char *)result);
+#ifdef HAVE_RUBY_ENCODING_H
+  if (!NIL_P(vresult)) {
+    rb_enc_copy(vresult, argv[1]);
+  }
+#endif
   if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
   return vresult;
 fail:
