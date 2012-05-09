@@ -808,6 +808,10 @@ SWIG_UnpackDataName(const char *c, void *ptr, size_t sz, const char *name) {
 
 #include <ruby.h>
 
+#ifdef HAVE_RUBY_ENCODING_H
+# include <ruby/encoding.h>
+#endif
+
 /* Ruby 1.7 defines NUM2LL(), LL2NUM() and ULL2NUM() macros */
 #ifndef NUM2LL
 #define NUM2LL(x) NUM2LONG((x))
@@ -1523,6 +1527,8 @@ SWIG_Ruby_SetModule(swig_module_info *pointer)
   swig_runtime_data_type_pointer = Data_Wrap_Struct(cl, 0, 0, pointer);
   rb_define_readonly_variable("$swig_runtime_data_type_pointer" SWIG_RUNTIME_VERSION SWIG_TYPE_TABLE_NAME, &swig_runtime_data_type_pointer);
 }
+
+
 
 #ifdef __cplusplus
 #if 0
@@ -2380,6 +2386,11 @@ _wrap_Node_next_get(int argc, VALUE *argv, VALUE self) {
   arg1 = reinterpret_cast< mecab_node_t * >(argp1);
   result = (mecab_node_t *) ((arg1)->next);
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mecab_node_t, 0 |  0 );
+#ifdef HAVE_RUBY_ENCODING_H
+  if (!NIL_P(vresult)) {
+    rb_enc_copy(vresult, self);
+  }
+#endif
   return vresult;
 fail:
   return Qnil;
@@ -2924,6 +2935,9 @@ _wrap_Node_surface_get(int argc, VALUE *argv, VALUE self) {
     }
   }
   vresult = SWIG_FromCharPtr((const char *)result);
+#ifdef HAVE_RUBY_ENCODING_H
+  rb_enc_copy(vresult, self);
+#endif
   delete[] result;
   return vresult;
 fail:
@@ -3099,6 +3113,9 @@ _wrap_Tagger_parseToNode(int argc, VALUE *argv, VALUE self) {
     }
   }
   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mecab_node_t, 0 |  0 );
+#ifdef HAVE_RUBY_ENCODING_H
+  rb_enc_copy(vresult, argv[0]);
+#endif
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return vresult;
 fail:
