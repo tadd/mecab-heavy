@@ -9,7 +9,7 @@ Ruby bindings for MeCab, a morphological analyzer.
 	s.email = 'taku@chasen.org'
 	s.extensions = [ 'extconf.rb' ]
 	s.files = [ 'AUTHORS', 'BSD', 'COPYING', 'GPL', 'LGPL',
-		'MeCab_wrap.cpp', 'README', 'bindings.html',
+		'MeCab_wrap.cpp', 'README', 'bindings.html', 'lib',
 		'extconf.rb', 'mecab-ruby.gemspec', 'test.rb' ]
 	s.has_rdoc = false
 	s.homepage = 'http://mecab.sourceforge.net/'
