@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
-	s.name = %q{mecab}
-	s.version = '0.996'
-	s.author = 'Taku Kudo'
-	s.date = '2011-12-24'
+	s.name = %q{mecab-heavy}
+	s.version = '0.996.0'
+	s.author = 'Tadashi Saito'
+	s.date = '2014-XX-XX'
 	s.description = <<-EOF
 Ruby bindings for MeCab, a morphological analyzer.
 	EOF
