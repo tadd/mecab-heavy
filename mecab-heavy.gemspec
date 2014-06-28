@@ -3,16 +3,17 @@ Gem::Specification.new do |s|
 	s.version = '0.996.0'
 	s.author = 'Tadashi Saito'
 	s.description = <<-EOF
-Ruby bindings for MeCab, a morphological analyzer.
+Ruby bindings for MeCab, a morphological analyzer,
+with libmecab and naist-jdic so that you can use easily at Heroku
 	EOF
-	s.email = 'taku@chasen.org'
+	s.email = 'tad.a.digger@gmail.com'
 	s.extensions = [ 'ext/mecab/extconf.rb' ]
   s.files         = `git ls-files`.split($/)
   s.files = Dir.glob('ext/**/*.{c,cpp,h,rb,patch}')
 
 	s.has_rdoc = false
 	s.homepage = 'http://mecab.sourceforge.net/'
-	s.summary = 'Ruby bindings for MeCab.'
+	s.summary = 'Ruby bindings for MeCab, with libmecab and naist-jdic for utility.'
 
 	s.licenses = ['BSD', 'GPL', 'LGPL']
 
