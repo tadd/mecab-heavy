@@ -9,7 +9,7 @@ with libmecab and naist-jdic so that you can use easily at Heroku
 	s.email = 'tad.a.digger@gmail.com'
 	s.extensions = [ 'ext/mecab/extconf.rb' ]
   s.files         = `git ls-files`.split($/)
-  s.files = Dir.glob('ext/**/*.{c,cpp,h,rb,patch}')
+  s.files = Dir.glob('{lib,ext}/**/*.{c,cpp,h,rb,patch}')
 
 	s.has_rdoc = false
 	s.homepage = 'http://mecab.sourceforge.net/'
