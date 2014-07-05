@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
 	s.name = %q{mecab-heavy}
-	s.version = '0.996.1'
+	s.version = '0.996.2dev'
 	s.author = 'Tadashi Saito'
 	s.description = <<-EOF
 Ruby bindings for MeCab, a morphological analyzer,
