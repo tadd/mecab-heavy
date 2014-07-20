@@ -432,6 +432,7 @@ SWIGINTERNINLINE int SWIG_CheckState(int r) {
 #ifdef __cplusplus
 extern "C" {
 #endif
+void Init_light(void);
 
 typedef void *(*swig_converter_func)(void *, int *);
 typedef struct swig_type_info *(*swig_dycast_func)(void **);
@@ -6836,5 +6837,7 @@ SWIGEXPORT void Init_mecab(void) {
   SwigClassTagger.destroy = (void (*)(void *)) free_MeCab_Tagger;
   SwigClassTagger.trackObjects = 0;
   rb_define_const(mMeCab, "VERSION", SWIG_FromCharPtr("0.996"));
+
+  Init_light();
 }
 
