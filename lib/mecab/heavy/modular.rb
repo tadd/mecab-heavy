@@ -8,7 +8,6 @@ module MeCab
           base.class_eval do
             alias initialize_before_mecab_heavy initialize
             def initialize(argument = '')
-              p :here
               initialize_before_mecab_heavy(argument + " -d #{::MeCab::Heavy::DICTIONARY_PATH}")
             end
           end
